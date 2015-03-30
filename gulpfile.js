@@ -10,17 +10,11 @@ var sass = require('gulp-sass');
 var JADE_SRC = './dev/*.jade';
 var JADE_DIR = './deploy/';
 
-var STYLUS_SRC = './dev/styl/*.styl';
-var STYLUS_DIR = './deploy/css';
-
 var JS_SRC = './dev/js/*.js'
 var JS_DIR = './deploy/js'
 
 var COFFEE_SRC = './dev/coffee/*.coffee';
 var COFFEE_DIR = './deploy/js';
-
-var UGLIFY_SRC = './dev/*.javas';
-var UGLIFY_DIR = './deploy/js';
 
 var SASS_SRC = './dev/sass/*.scss';
 var SASS_DIR = './deploy/css';
