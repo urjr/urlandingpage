@@ -1,0 +1,132 @@
+//Mixins
+@mixin bp($point) {
+  @if $point == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (min-width: 992px) { @content; }
+  }
+}
+
+@mixin transition($time){
+	-webkit-transition:$time;
+	transition:$time;
+}
+
+@mixin translate($x-axis,$y-axis){
+	-ms-transform: translate($x-axis,$y-axis);
+	-webkit-transform: translate($x-axis,$y-axis);
+	transform: translate($x-axis,$y-axis);
+}
+
+$font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+$text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
+
+
+//Styles
+body{
+	background: #2ecc71;
+}
+
+
+//home navbar
+.navbar-home{
+	position:relative;
+	z-index:1000;
+	font-family: $font-stack-default;
+	text-shadow: $text-shadow-effect;
+	.container{
+		.navbar-header .navbar-brand, .navbar-collapse ul li a{
+			color: #fff;
+			@include transition(.25s);
+			&:hover{
+				@include translate(0,-4px);
+				background:transparent !important;
+				text-shadow:0 2px 6px rgba(0,0,0,.5);
+			}
+		}
+		.navbar-header .navbar-toggle {
+			margin-right: 5px;
+			.icon-bar{
+				border: 2px solid white;
+				width: 30px;
+			}
+		}
+	}
+}
+
+//home splash page
+.splash {
+	font-family:$font-stack-default;
+	color:white;
+
+	a.splash-link{
+		color: white;
+		text-decoration: underline;
+		text-shadow: none;
+		@include transition(.25s);
+		font-family: 'Pacifico', cursive;
+		line-height: .5;
+		box-sizing:border-box;
+		font-weight: normal !important;
+		text-shadow: $text-shadow-effect;
+		&:hover{
+			@include translate(0,-4px);
+			text-shadow:0 2px 6px rgba(0,0,0,.5);
+		}
+	}
+
+	.vcenter{
+		display: table !important;
+
+		@include bp(tablet){
+			height: 24em;
+		}
+
+		@include bp(desktop){
+			height: 34em;
+		}
+	}
+
+	.splash-text{
+		display: table-cell !important;
+		vertical-align: middle;
+		text-shadow: $text-shadow-effect;
+
+		h1{
+			color: white;
+			font-size: 12em;
+			font-weight: bold;
+
+			@include bp(tablet){
+				font-size: 24em;
+				line-height: .5;
+			}
+
+			@include bp(desktop){
+				font-size: 34em;
+				letter-spacing: -12px;
+			}
+		}
+
+		p{
+			font-size: 1.5em;
+			display:table-cell;
+			vertical-align: middle;
+
+			@include bp(tablet){
+				font-size: 1.75em;
+				margin-top: 3em;
+			}
+
+			@include bp(desktop){
+				font-size: 2.3em;
+			}
+		}
+	}
+}
+
+
+
+
+

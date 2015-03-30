@@ -1,1 +1,29 @@
-h1 This is the Home Page
+nav.navbar.navbar-home
+	.container.containter-fluid
+		.navbar-header
+			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav")
+				span.sr-only Toggle Navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(ng-href="#/home") Ulises Reyes
+		.collapse.navbar-collapse#main-nav
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(ng-href="#/work") Work
+				li
+					a(ng-href="#/about") About
+				li
+					a(ng-href="#/blog") Blog
+
+.container
+	.row.splash
+		.col-sm-6.vcenter
+			.splash-text
+				h1 Hi
+		.col-sm-6.vcenter
+			.splash-text
+				p My name is #[a.splash-link(ng-href="#/about") Ulises Reyes]. I am a #[a.splash-link(href="http://en.wikipedia.org/wiki/Graphic_design", target="_blank") graphic], #[a.splash-link(href="http://en.wikipedia.org/wiki/Web_design", target="_blank") web], and #[a.splash-link(href="http://en.wikipedia.org/wiki/Architecture", target="_blank") architectural] designer based in #[a.splash-link(href="http://en.wikipedia.org/wiki/New_York_City", target="_blank") New York]. Feel free to view my #[a.splash-link(ng-href="#/work") portfolio], #[a.splash-link(ng-href="#/blog") blog], or any of the links below to learn more about me. For inquiries, #[a.splash-link(href="mailto:ureyesjr@gmail.com") email me]!
+	.row.icons
+		.col-sm-12.text-center
+			
