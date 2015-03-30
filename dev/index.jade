@@ -1,10 +1,12 @@
-doctype html5
-html(lang="en", ng-app)
+doctype html
+html(lang="en",ng-app)
 	head
 		meta(charset="UTF-8")
 		title Ulises Reyes
+		script(src="js/angular/angular.min.js")
 		link(rel="stylesheet", href="css/fonts.css")
 		link(rel="stylesheet", href="css/bootstrap.css")
 
 	body
-		h1(style="font-family:Sweden Sans;font-weight:bold") Hello World #[span.glyphicon.glyphicon-user]
+		input(type="text",ng-model="name")
+		h1(style="font-family:Sweden Sans;font-weight:bold") Hello {{name}} #[span.glyphicon.glyphicon-user]
