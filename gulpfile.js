@@ -38,12 +38,12 @@ gulp.task('jade', function() { // CONVERT JADE FILES TO HTML
 });
 
 gulp.task('jade-views', function() { // CONVERT JADE FILES TO HTML
-  return  gulp.src(JADE_SRC)
+  return  gulp.src(JADE_VIEW_SRC)
     .pipe(jade({
       pretty: true // IF FALSE, OUTPUT WILL BE MINIFIED
     }))
     .on('error', handleErr)
-    .pipe(gulp.dest(JADE_DIR))
+    .pipe(gulp.dest(JADE_VIEW_DIR))
     .pipe(connect.reload());
 });
 
@@ -83,7 +83,7 @@ gulp.task('connect', function() { // RUN LOCAL SERVER AND INIT LIVERELOAD
 
 gulp.task('watch', function() {
 	gulp.watch([JADE_SRC], ['jade']);
-	gulp.watch([JADE_VIEW_SRC], ['jade']);
+	gulp.watch([JADE_VIEW_SRC], ['jade-views']);
 	gulp.watch([COFFEE_SRC], ['coffee']);
 	gulp.watch([JS_SRC], ['js']);
 	gulp.watch([SASS_SRC], ['sass']);
