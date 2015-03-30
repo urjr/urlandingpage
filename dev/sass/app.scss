@@ -25,13 +25,23 @@
 	transform: translate($x-axis,$y-axis) scale($scale-value);
 }
 
+@mixin vertical-gradient($top-color,$bottom-color,$fallback){
+	background: -webkit-linear-gradient($top-color, $bottom-color),$fallback;
+  background: -o-linear-gradient($top-color, $bottom-color),$fallback;
+  background: -moz-linear-gradient($top-color, $bottom-color),$fallback;
+  background: linear-gradient($top-color, $bottom-color),$fallback;
+}
+
 $font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 $text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
 
 
 //Styles
 body{
-	background: #2ecc71;
+  // background: #3fd47d;    //greenish
+  // background:#e74c3c;     //reddish
+  background:#3498db;     //blueish
+  // background:#7f8c8d;     //grayish
 }
 
 
@@ -46,10 +56,15 @@ body{
 		.navbar-header .navbar-brand, .navbar-collapse ul li a{
 			color: #fff;
 			@include transition(.25s);
+			font-size:1.25em;
+			font-weight: bold; 
 			&:hover{
 				@include translate(0,-4px);
 				background:transparent !important;
 				text-shadow:0 2px 6px rgba(0,0,0,.5);
+			}
+			@include bp(desktop){
+				font-size: 1.5em;
 			}
 		}
 		.navbar-header .navbar-toggle {
@@ -57,6 +72,7 @@ body{
 			.icon-bar{
 				border: 2px solid white;
 				width: 30px;
+				border-radius: 2px;
 			}
 		}
 	}
@@ -135,24 +151,25 @@ body{
 
 .icons{
 	margin-top:1.5em;
+	@include bp(tablet){
+		text-align: center;
+	}
 	i{
 		color: white;
-		margin-right:10px;
 		text-shadow: $text-shadow-effect;
 		font-size:1.5em;
 		@include transition(.25s);
-		&:hover{
-			@include scale-translate(0,-20px,1.5);
-			text-shadow:0 2px 6px rgba(0,0,0,.5);
-		}
 
 		@include bp(tablet){
 			font-size: 3em;
-			margin-right:20px;
+			text-align: center;
+			&:hover{
+				@include scale-translate(0,-15px,1.25);
+				text-shadow:0 2px 6px rgba(0,0,0,.5);
+			}
 		}
 		@include bp(desktop){
-			font-size: 6em;
-			margin-right: 30px;
+			font-size: 5em;
 		}
 	}
 }
