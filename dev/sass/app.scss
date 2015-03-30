@@ -19,6 +19,12 @@
 	transform: translate($x-axis,$y-axis);
 }
 
+@mixin scale-translate($x-axis,$y-axis,$scale-value){
+	-ms-transform: translate($x-axis,$y-axis) scale($scale-value);
+	-webkit-transform: translate($x-axis,$y-axis) scale($scale-value);
+	transform: translate($x-axis,$y-axis) scale($scale-value);
+}
+
 $font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 $text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
 
@@ -35,6 +41,7 @@ body{
 	z-index:1000;
 	font-family: $font-stack-default;
 	text-shadow: $text-shadow-effect;
+	margin-bottom:0;
 	.container{
 		.navbar-header .navbar-brand, .navbar-collapse ul li a{
 			color: #fff;
@@ -122,6 +129,30 @@ body{
 			@include bp(desktop){
 				font-size: 2.3em;
 			}
+		}
+	}
+}
+
+.icons{
+	margin-top:1.5em;
+	i{
+		color: white;
+		margin-right:10px;
+		text-shadow: $text-shadow-effect;
+		font-size:1.5em;
+		@include transition(.25s);
+		&:hover{
+			@include scale-translate(0,-20px,1.5);
+			text-shadow:0 2px 6px rgba(0,0,0,.5);
+		}
+
+		@include bp(tablet){
+			font-size: 3em;
+			margin-right:20px;
+		}
+		@include bp(desktop){
+			font-size: 6em;
+			margin-right: 30px;
 		}
 	}
 }
