@@ -69,7 +69,6 @@ body{
 			}
 			&:focus{
 				background:transparent;
-				text-decoration: underline;
 			}
 			@include bp(desktop){
 				font-size: 1.5em;
@@ -77,10 +76,11 @@ body{
 		}
 		.navbar-header .navbar-toggle {
 			margin-right: 5px;
+			padding: 0;
 			.icon-bar{
-				border: 2px solid white;
+				border: 1px solid white;
+				margin-top: 2px;
 				width: 30px;
-				border-radius: 2px;
 			}
 		}
 	}
@@ -231,8 +231,8 @@ body{
 
 	.description{
 		margin-top: 20px;
+		overflow-y: auto;
 		@include bp(tablet){
-			overflow-y: scroll;
 			margin-top: 0;
 			height: 358px;
 		}
