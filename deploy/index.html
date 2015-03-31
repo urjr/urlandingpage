@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body ng-controller="ColorController" style="background:#{{currentColor}}">
+    <ng-include src="'partials/topbar.html'"></ng-include>
     <div ng-view></div>
   </body>
 </html>

@@ -13,6 +13,9 @@ var JADE_DIR = './deploy/';
 var JADE_VIEW_SRC = './dev/views/*.jade';
 var JADE_VIEW_DIR = './deploy/views/';
 
+var JADE_PARTIAL_SRC = './dev/partials/*.jade';
+var JADE_PARTIAL_DIR = './deploy/partials/';
+
 var JS_SRC = './dev/js/*.js'
 var JS_DIR = './deploy/js'
 
@@ -44,6 +47,16 @@ gulp.task('jade-views', function() { // CONVERT JADE FILES TO HTML
     }))
     .on('error', handleErr)
     .pipe(gulp.dest(JADE_VIEW_DIR))
+    .pipe(connect.reload());
+});
+
+gulp.task('jade-partials', function() { // CONVERT JADE FILES TO HTML
+  return  gulp.src(JADE_PARTIAL_SRC)
+    .pipe(jade({
+      pretty: true // IF FALSE, OUTPUT WILL BE MINIFIED
+    }))
+    .on('error', handleErr)
+    .pipe(gulp.dest(JADE_PARTIAL_DIR))
     .pipe(connect.reload());
 });
 
@@ -84,6 +97,7 @@ gulp.task('connect', function() { // RUN LOCAL SERVER AND INIT LIVERELOAD
 gulp.task('watch', function() {
 	gulp.watch([JADE_SRC], ['jade']);
 	gulp.watch([JADE_VIEW_SRC], ['jade-views']);
+	gulp.watch([JADE_PARTIAL_SRC], ['jade-partials']);
 	gulp.watch([COFFEE_SRC], ['coffee']);
 	gulp.watch([JS_SRC], ['js']);
 	gulp.watch([SASS_SRC], ['sass']);

@@ -16,4 +16,5 @@ html(lang="en",ng-app="mySite")
 		link(rel="stylesheet", href="css/app.css")
 
 	body(ng-controller="ColorController", style="background:#{{currentColor}}")
+		ng-include(src="'partials/topbar.html'")
 		div(ng-view)
