@@ -14,11 +14,11 @@ mySite.config(['$routeProvider', function($routeProvider){
 	}).
 	when('/blog/:itemId',{
 		templateUrl:'../views/blogpost.html',
-		controller:'BlogPostController'
+		// controller:'BlogPostController'
 	}).
 	when('/work',{
 		templateUrl:'../views/projectlist.html',
-		controller:'ProjectController'
+		// controller:'ProjectController'
 	}).
 	otherwise({
 		redirectTo:'/home'
