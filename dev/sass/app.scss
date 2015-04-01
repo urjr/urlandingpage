@@ -237,11 +237,17 @@ body{
 	}
 
 	.description{
-		margin-top: 20px;
-		height: 450px;
+		margin-top: 3em;
+		padding:0 15px;
+		@include bp(tablet){
+			display: none;
+		}
+	}
+
+	.desktop-description{
+		// margin-top: 20px;
 		// overflow-y: auto;
 		@include bp(tablet){
-			margin-top: 0;
 			height: 358px;
 		}
 		@include bp(desktop){
