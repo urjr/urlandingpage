@@ -57,6 +57,9 @@ body{
 	text-shadow: $text-shadow-effect;
 	margin-bottom:0;
 	border-bottom:1px solid rgba(255,255,255,.3);
+	.selected,.selected:hover,.selected:focus,.selected:active{
+		text-decoration: line-through;
+	}
 	.container{
 		.navbar-header .navbar-brand, .navbar-collapse ul li a{
 			text-align:center;
@@ -150,6 +153,10 @@ body{
 			}
 
 			@include bp(desktop){
+				font-size: 2em;
+			}
+
+			@include bp(xl-desktop){
 				font-size: 2.3em;
 			}
 		}

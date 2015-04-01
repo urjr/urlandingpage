@@ -5,12 +5,12 @@ nav.navbar.navbar-home
 				span.sr-only Toggle Navigation
 				i.fa.fa-caret-square-o-down.md.fa-2x
 			a.navbar-brand(ng-href="#/home") Ulises Reyes
-		.collapse.navbar-collapse#main-nav(collapse="!isCollapsed")
+		.collapse.navbar-collapse#main-nav(collapse="!isCollapsed" ng-controller="NavbarController")
 			ul.nav.navbar-nav.navbar-right
 				li
-					a(ng-href="#/work") Work &nbsp;#[i.fa.fa-file-image-o]
+					a(ng-href="#/work", ng-class="{selected: isActive('/work')}") Work &nbsp;#[i.fa.fa-file-image-o]
 				li
-					a(ng-href="#/about") About &nbsp;#[i.fa.fa-file-text-o]
+					a(ng-href="#/about", ng-click="isActive('/about')" ng-class="{selected: isActive('/about')}") About &nbsp;#[i.fa.fa-file-text-o]
 				//- li
 					a(ng-href="#/blog") Blog
 				li
