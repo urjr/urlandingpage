@@ -3,13 +3,15 @@ nav.navbar.navbar-home
 		.navbar-header
 			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav")
 				span.sr-only Toggle Navigation
-				i.fa.fa-caret-square-o-down.md.fa-lg
+				i.fa.fa-caret-square-o-down.md.fa-2x
 			a.navbar-brand(ng-href="#/home") Ulises Reyes
 		.collapse.navbar-collapse#main-nav
 			ul.nav.navbar-nav.navbar-right
 				li
-					a(ng-href="#/work") Work
+					a(ng-href="#/work") Work &nbsp;#[i.fa.fa-file-image-o]
 				li
-					a(ng-href="#/about") About
-				li
+					a(ng-href="#/about") About &nbsp;#[i.fa.fa-file-text-o]
+				//- li
 					a(ng-href="#/blog") Blog
+				li
+					a(ng-href="mailto:hi@ulisesreyes.com") Contact &nbsp;#[i.fa.fa-envelope]
