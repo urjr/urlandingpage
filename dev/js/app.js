@@ -1,4 +1,4 @@
-var mySite = angular.module('mySite',['ngRoute','ngAnimate','ui.bootstrap']);
+var mySite = angular.module('mySite',['ngRoute','ngAnimate','ui.bootstrap','sun.scrollable']);
 
 mySite.controller('ColorController',['$scope', function($scope){
 	$scope.colors = ['3fd47d','e74c3c','3498db','7f8c8d','e67e22'];

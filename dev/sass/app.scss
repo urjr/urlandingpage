@@ -59,6 +59,7 @@ body{
 	border-bottom:1px solid rgba(255,255,255,.3);
 	.container{
 		.navbar-header .navbar-brand, .navbar-collapse ul li a{
+			text-align:center;
 			color: #fff;
 			@include transition(.25s);
 			font-size:1.25em;
@@ -230,7 +231,8 @@ body{
 
 	.description{
 		margin-top: 20px;
-		overflow-y: auto;
+		height: 450px;
+		// overflow-y: auto;
 		@include bp(tablet){
 			margin-top: 0;
 			height: 358px;
