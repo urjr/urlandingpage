@@ -1,11 +1,11 @@
 nav.navbar.navbar-home
 	.container.containter-fluid
 		.navbar-header
-			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav")
+			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav", ng-Click="isCollapsed=!isCollapsed")
 				span.sr-only Toggle Navigation
 				i.fa.fa-caret-square-o-down.md.fa-2x
 			a.navbar-brand(ng-href="#/home") Ulises Reyes
-		.collapse.navbar-collapse#main-nav
+		.collapse.navbar-collapse#main-nav(collapse="!isCollapsed")
 			ul.nav.navbar-nav.navbar-right
 				li
 					a(ng-href="#/work") Work &nbsp;#[i.fa.fa-file-image-o]

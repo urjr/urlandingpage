@@ -2,9 +2,9 @@
 <nav class="navbar navbar-home">
   <div class="container containter-fluid">
     <div class="navbar-header">
-      <button type="button" data-toggle="collapse" data-target="#main-nav" class="navbar-toggle collapsed"><span class="sr-only">Toggle Navigation</span><i class="fa fa-caret-square-o-down md fa-2x"></i></button><a ng-href="#/home" class="navbar-brand">Ulises Reyes</a>
+      <button type="button" data-toggle="collapse" data-target="#main-nav" ng-Click="isCollapsed=!isCollapsed" class="navbar-toggle collapsed"><span class="sr-only">Toggle Navigation</span><i class="fa fa-caret-square-o-down md fa-2x"></i></button><a ng-href="#/home" class="navbar-brand">Ulises Reyes</a>
     </div>
-    <div id="main-nav" class="collapse navbar-collapse">
+    <div id="main-nav" collapse="!isCollapsed" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a ng-href="#/work">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
         <li><a ng-href="#/about">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
