@@ -4,6 +4,7 @@ indexControllers.controller("NavbarController",['$scope','$location', function($
 	$scope.isActive = function(viewLocation){
 		return $location.path().indexOf(viewLocation) == 0;
 	};
+	
 }]);
 
 indexControllers.controller("ColorController",['$scope', function($scope){
