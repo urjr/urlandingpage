@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mySite">
+<html lang="en" ng-app="mySite" ng-controller="ColorController">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,14 @@
     <script src="lib/angular/angular-route.min.js"></script>
     <script src="lib/angular/angular-animate.min.js"></script>
     <script src="js/app.js"></script>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon-{{currentColor}}.png">
     <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <body ng-controller="ColorController" style="background:#{{currentColor}}">
+  <body style="background:#{{currentColor}}">
     <ng-include src="'partials/topbar.html'"></ng-include>
     <div ng-view></div>
   </body>
