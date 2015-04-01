@@ -244,10 +244,33 @@ body{
 	}
 
 	.notes{
-		margin-bottom: 3em; 
+		margin-bottom: 3em;
+		text-align: center; 
 		@include bp(tablet){
 			margin-top: 20px;
 			margin-bottom: 6em;
+			text-align: normal;
+		}
+		.fluent {
+			font-family: $font-stack-cursive;
+			text-decoration: underline;
+		}
+	}
+}
+
+.under-construction{
+	font-family: $font-stack-default;
+	text-shadow: $text-shadow-effect;
+	color: white;
+	h1{
+		font-size: 6em;
+		font-weight: bold;
+		line-height: .8;
+		@include bp(tablet){
+			font-size: 12em;
+		}
+		@include bp(desktop){
+			font-size: 16em;
 		}
 	}
 }
