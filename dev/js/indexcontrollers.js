@@ -1,6 +1,6 @@
 var indexControllers = angular.module('indexControllers',[]);
 
-indexControllers.controller("NavbarController",['$scope','$location',function($scope,$location){
+indexControllers.controller("NavbarController",['$scope','$location', function($scope,$location){
 	$scope.isActive = function(viewLocation){
 		return $location.path().indexOf(viewLocation) == 0;
 	};
