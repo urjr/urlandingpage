@@ -1,9 +1,23 @@
 var indexControllers = angular.module('indexControllers',[]);
 
-// try turning this into a directive later on...
-indexControllers.controller("NavbarController",['$scope','$location',function($scope,$location){
+indexControllers.controller("NavbarController",['$scope','$location', function($scope,$location){
 	$scope.isActive = function(viewLocation){
 		return $location.path().indexOf(viewLocation) == 0;
+	};
+}]);
+
+indexControllers.controller("TitleController",['$scope','$location', function($scope,$location){
+	$scope.titles = [
+		{path:'/work',name:'Work'},
+		{path:'/about',name:'About'}
+	];
+
+	$scope.getTitle = function(){
+		for (var i = $scope.titles.length - 1; i >= 0; i--) {
+			if($location.path().indexOf($scope.titles[i].path) == 0){
+				return $scope.titles[i].name + " |";
+			};
+		};
 	};
 }]);
 
