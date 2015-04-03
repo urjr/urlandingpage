@@ -3,7 +3,7 @@ nav.navbar.navbar-home.navbar-fixed-top(ur-darken="light")
 		.navbar-header
 			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav", ng-Click="isCollapsed=!isCollapsed;light=!light")
 				span.sr-only Toggle Navigation
-				i.fa.fa-caret-square-o-down.md.fa-2x
+				i.fa.fa-2x(ur-flip)
 			a.navbar-brand(ng-href="#/home") Ulises Reyes
 		.collapse.navbar-collapse#main-nav(collapse="!isCollapsed" ng-controller="NavbarController")
 			ul.nav.navbar-nav.navbar-right
