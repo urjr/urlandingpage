@@ -1,7 +1,7 @@
-nav.navbar.navbar-home
+nav.navbar.navbar-home.navbar-fixed-top(ur-darken="light")
 	.container.containter-fluid
 		.navbar-header
-			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav", ng-Click="isCollapsed=!isCollapsed")
+			button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#main-nav", ng-Click="isCollapsed=!isCollapsed;light=!light")
 				span.sr-only Toggle Navigation
 				i.fa.fa-caret-square-o-down.md.fa-2x
 			a.navbar-brand(ng-href="#/home") Ulises Reyes
@@ -11,7 +11,9 @@ nav.navbar.navbar-home
 					a(ng-href="#/work", ng-class="{selected: isActive('/work')}") Work &nbsp;#[i.fa.fa-file-image-o]
 				li
 					a(ng-href="#/about", ng-class="{selected: isActive('/about')}") About &nbsp;#[i.fa.fa-file-text-o]
+				li
+					a(href="img/ulisesreyes-cv.pdf", download="Ulises Reyes CV") CV &nbsp;#[i.fa.fa-file-pdf-o]
 				//- li
 					a(ng-href="#/blog") Blog
 				li
-					a(ng-href="mailto:hi@ulisesreyes.com") Contact &nbsp;#[i.fa.fa-envelope]
+					a(href="mailto:hi@ulisesreyes.com") Contact &nbsp;#[i.fa.fa-envelope]

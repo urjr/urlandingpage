@@ -1,11 +1,13 @@
 var indexControllers = angular.module('indexControllers',[]);
 
+//Show active site on navbar
 indexControllers.controller("NavbarController",['$scope','$location', function($scope,$location){
 	$scope.isActive = function(viewLocation){
 		return $location.path().indexOf(viewLocation) == 0;
 	};
 }]);
 
+//Change page title based on active site
 indexControllers.controller("TitleController",['$scope','$location', function($scope,$location){
 	$scope.titles = [
 		{path:'/work',name:'Work'},
@@ -21,6 +23,7 @@ indexControllers.controller("TitleController",['$scope','$location', function($s
 	};
 }]);
 
+//Random color on refresh
 indexControllers.controller("ColorController",['$scope', function($scope){
 	$scope.colors = ['3fd47d','e74c3c','3498db','7f8c8d','e67e22'];
 	$scope.getColor = function(){

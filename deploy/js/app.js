@@ -3,7 +3,8 @@ var mySite = angular.module('mySite',[
 	'ngAnimate',
 	'ui.bootstrap',
 	'sun.scrollable',
-	'indexControllers'
+	'indexControllers',
+	'siteDirectives'
 	]);
 
 mySite.config(['$routeProvider', function($routeProvider){

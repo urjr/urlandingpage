@@ -48,15 +48,18 @@ body{
   // background:#7f8c8d;     //grayish
 }
 
+.view{
+	margin-top:50px;
+}
 
 //home navbar
 .navbar-home{
-	position:relative;
+	// position:relative;
 	z-index:1000;
 	font-family: $font-stack-default;
 	text-shadow: $text-shadow-effect;
 	margin-bottom:0;
-	border-bottom:1px solid rgba(255,255,255,.3);
+	// border-bottom:1px solid rgba(255,255,255,.3);
 	.selected,.selected:hover,.selected:focus,.selected:active{
 		text-decoration: line-through;
 	}
@@ -70,7 +73,7 @@ body{
 			&:hover{
 				@include translate(0,-4px);
 				background:transparent !important;
-				text-shadow:0 2px 6px rgba(0,0,0,.5);
+				text-shadow:0 2px 6px rgba(0,0,0,1);
 			}
 			&:focus{
 				background:transparent;

@@ -19,6 +19,7 @@ html(lang="en",ng-app="mySite", ng-controller="ColorController")
 		script(src="lib/angular/ui-bootstrap-tpls-0.12.1.min.js")
 		script(src="lib/angular/scrollable.js")
 		script(src="js/indexcontrollers.js")
+		script(src="js/mydirectives.js")
 		script(src="js/app.js")
 		link(href='http://fonts.googleapis.com/css?family=Pacifico',rel='stylesheet',type='text/css')
 		link(rel="stylesheet", href="css/fonts.css")
@@ -28,8 +29,8 @@ html(lang="en",ng-app="mySite", ng-controller="ColorController")
 		link(rel="stylesheet", href="css/nanoscroller.css")
 
 	body(style="background:#{{currentColor}}")
-		ng-include.test(src="'partials/topbar.html'")
-		div(ng-view)
+		ng-include(src="'partials/topbar.html'")
+		div.view(ng-view)
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
