@@ -39,6 +39,7 @@ siteDirectives.directive('urDarken', function(){
 	}
 });
 
+//flip navbar button
 siteDirectives.directive('urFlip', function(){
 	return{
 		restrict: 'A',

@@ -2,12 +2,12 @@
 <nav ur-darken="light" class="navbar navbar-home navbar-fixed-top">
   <div class="container containter-fluid">
     <div class="navbar-header">
-      <button type="button" data-toggle="collapse" data-target="#main-nav" ng-Click="isCollapsed=!isCollapsed;light=!light" class="navbar-toggle collapsed"><span class="sr-only">Toggle Navigation</span><i ur-flip="ur-flip" class="fa fa-2x"></i></button><a ng-href="#/home" class="navbar-brand">Ulises Reyes</a>
+      <button type="button" data-toggle="collapse" data-target="#main-nav" ng-Click="isCollapsed=!isCollapsed;light=!light" class="navbar-toggle collapsed"><span class="sr-only">Toggle Navigation</span><i ur-flip="ur-flip" class="fa fa-2x"></i></button><a ui-sref=".home" class="navbar-brand">Ulises Reyes</a>
     </div>
     <div id="main-nav" collapse="!isCollapsed" ng-controller="NavbarController" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-href="#/work" ng-class="{selected: isActive('/work')}">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
-        <li><a ng-href="#/about" ng-class="{selected: isActive('/about')}">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
+        <li><a ui-sref=".work" ng-class="{selected: isActive('/work')}">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
+        <li><a ui-sref=".about" ng-class="{selected: isActive('/about')}">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
         <li><a href="img/ulisesreyes-cv.pdf" download="Ulises Reyes CV">CV &nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
         <li><a href="mailto:hi@ulisesreyes.com">Contact &nbsp;<i class="fa fa-envelope"></i></a></li>
       </ul>
