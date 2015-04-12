@@ -1,0 +1,86 @@
+
+<div class="container work">
+  <div class="row">
+    <div ur-mobile-search="toggled" ng-click="toggled = !toggled" class="control-panel-shade"></div>
+    <div class="col-sm-4">
+      <div ur-get-parent-width="ur-get-parent-width" ur-mobile-search="toggled" class="control-panel">
+        <h1>Work</h1>
+        <div class="search-field">
+          <form ng-submit="toggled = !toggled">
+            <input id="search-box" type="text" placeholder="Search" ng-model="search"/><i class="fa fa-search search-icon"></i>
+          </form>
+        </div>
+        <div class="radio">
+          <p class="divider">or</p>
+          <h4>Click a Category <i class="fa fa-folder-open"></i></h4>
+          <div ng-model="search" btn-radio="'Graphic Design'" ng-click="toggled = !toggled" class="btn btn-category">Graphic Design</div>
+          <div ng-model="search" btn-radio="'Web Design'" ng-click="toggled = !toggled" class="btn btn-category">Web Design</div>
+          <div ng-model="search" btn-radio="'Interaction Design'" ng-click="toggled = !toggled" class="btn btn-category">Interaction Design</div>
+          <div ng-model="search" btn-radio="'Architecture'" ng-click="toggled = !toggled" class="btn btn-category">Architecture</div>
+        </div>
+      </div>
+      <button ng-click="toggled = !toggled" class="search-button">Search <i class="fa fa-search"></i></button>
+    </div>
+    <div class="col-sm-8 project-panel">
+      <h1 ur-get-parent-width="ur-get-parent-width" class="search-title">{{search}} <span ng-show="search" ng-click="search = ''" class="search-clear"><i class="fa fa-times-circle-o"></i></span></h1>
+      <h1 class="mobile-title">{{search}} <span ng-show="search" ng-click="search = ''" class="search-clear"><i class="fa fa-times-circle-o"></i></span> <span ng-hide="search">Work</span></h1>
+      <div class="row">
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+        <div class="col-md-6"><a href="href">
+            <div style="background:url('img/boston.jpg'); background-size:cover;" class="project">
+              <div class="project-img"></div>
+              <div class="project-title">
+                <h2>Test Title</h2>
+                <p>2015</p>
+                <p>Interaction Design</p>
+              </div>
+            </div></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-include src="'views/project.html'"></ng-include>

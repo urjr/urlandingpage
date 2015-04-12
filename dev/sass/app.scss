@@ -16,6 +16,12 @@
 	transition:$time;
 }
 
+@mixin scale($val){
+	-ms-transform: scale($val);
+	-webkit-transform: scale($val);
+	transform: scale($val);
+}
+
 @mixin translate($x-axis,$y-axis){
 	-ms-transform: translate($x-axis,$y-axis);
 	-webkit-transform: translate($x-axis,$y-axis);
@@ -35,17 +41,49 @@
   background: linear-gradient($top-color, $bottom-color),$fallback;
 }
 
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
 $font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-stack-cursive: 'Pacifico', cursive;
 $text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
 
 
+@include keyframes(floating-search){
+	0% {@include translate(0,0);}
+	100% {@include translate(0,-10px);}
+}
+
 //Styles
+
+html{
+	height:100%;
+}
 body{
-  // background: #3fd47d;    //greenish
-  // background:#e74c3c;     //reddish
-  // background:#3498db;     //blueish
-  // background:#7f8c8d;     //grayish
+	height:100%;
 }
 
 .view{
@@ -293,7 +331,337 @@ body{
 	}
 }
 
+// work page
+.search-field{
+	position: relative;
+}
 
+#search-box {
+  display: block;
+  text-align:center;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #000;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border-left:0;
+  border-top:0;
+  border-right:0;
+  border-bottom: 3px solid #bbb;
+  border-radius: 0;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  & + i{
+  	color: #bbb;
+  	position: absolute;
+  	bottom:35%;
+  	right:0
+  }
+  @include bp(tablet){
+  	text-align: left;
+  }
+  &:focus{
+	  border-color: #000;
+	  outline: 0;
+	}
+	&:focus + i{
+		color: #000;
+	}
+}
+
+$work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
+.work{
+	margin-top:50px;
+	a{
+		text-decoration: none;
+	}
+	font-family: $font-stack-default;
+	text-shadow: $text-shadow-effect;
+	.search-clear{
+		color: red;
+		&:hover{
+			cursor: pointer;
+			cursor: hand;
+
+		}
+	}
+	button.search-button{
+		position: fixed;
+		background: white;
+		text-align: center;
+		z-index:50;
+		color: white;
+		bottom:0;
+		width: 100%;
+		left: 0;
+		color: #000;
+		padding:15px;
+		box-shadow: $work-box-shadow;
+		border:none;
+		@include bp(tablet){
+			display: none;
+		}
+	}
+	//directive specific style
+	.control-panel-mobile{
+		margin: 0 !important;
+	}
+
+	.control-panel,.control-panel-shade{
+		margin-top:-200%;
+		@include transition(.25s);
+		@include bp(tablet){
+			margin-top: auto;
+		}
+	}
+	.control-panel-shade{
+		background: rgba(0,0,0,.9);
+		position:fixed;
+		width: 100%;
+		height: 100%;
+		z-index:99;
+		top:0;
+		@include bp(tablet){
+			display: none;
+		}
+	}
+	.control-panel{
+		// display: none;
+		background: #fff;
+		box-shadow: $work-box-shadow;
+		position:fixed;
+		border: 1px solid #eee;
+		z-index:500;
+		padding:0 15px 20px 15px;
+		text-align: center;
+		@include bp(tablet){
+			display: block;
+			text-align: left;
+			height: auto;
+			left: auto;
+		}
+		.divider{
+			color: #bbb;
+			@include bp(tablet){
+				margin-left:12px;
+			}
+		}
+		.btn-category{
+			width: 100%;
+			margin-top: 10px;
+			&:active, &.active, &:hover{
+				box-shadow: none;
+				text-decoration: line-through;
+			}
+			@include bp(tablet){
+				text-align: left;
+			}
+		}
+		h1{
+			font-weight: bold;
+			color: #000;
+			@include bp(desktop){
+				font-size: 3em;
+			}
+			@include bp(xl-desktop){
+				font-size: 4em;
+			}
+		}
+		h4{
+			margin: 10px 0 0 0;
+			font-weight: bold;
+		}
+	}
+
+	.project-panel{
+		.search-title{
+			display: none;
+			position: fixed;
+			z-index: 100;
+			margin: 0;
+			text-align: center;
+			@include animation(floating-search 1.25s ease-in-out infinite alternate);
+			@include bp(tablet){
+				display: block;
+			}
+		}
+		.mobile-title{
+			text-align: center;
+			@include bp(tablet){
+				display: none;
+			}
+		}
+		h1{
+			font-weight: bold;
+			color: #fff;
+			margin-top: 10px;
+			@include bp(desktop){
+				font-size: 4em;
+			}
+		}
+	}
+	.project{
+		height: 380px;
+		margin-bottom: 30px;
+		position: relative;
+		box-shadow: $work-box-shadow;
+		background: white;
+		color: #000;
+		&:hover{
+			@include scale(1.02);
+			box-shadow: 0 0 15px 2px rgba(0,0,0,.5);
+			// z-index:200;
+		}
+		@include bp(desktop){
+			@include transition(.25s);
+		}
+
+		.project-img{
+			height: 75%;
+		}
+
+		.project-title{
+			background:white;
+			height: 25%;
+			text-decoration: none;
+			text-align:center;
+			padding:10px;
+			position: relative;
+			@include bp(tablet){
+				text-align:left;
+			}
+			@include bp(desktop){
+				height: 100%;
+				position:absolute;
+				width: 100%;
+				text-align:center;
+				top:0;
+				padding-top:50%;
+				color:#fff;
+				background: rgba(0,0,0,.7);
+				opacity:0;
+				&:hover{
+					opacity: 1;
+				}
+			}
+			@include bp(xl-desktop){
+				padding-top: 40%;
+			}
+
+			h2{
+				margin:0;
+				font-weight: bold;
+			}
+			p{
+				margin:0;
+			}
+		}
+	}
+}
+
+.project-feature{
+	font-family: $font-stack-default;
+	text-shadow: $text-shadow-effect;
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,.6);
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:900;
+	.metadata{
+		border-bottom: 1px solid #ccc;
+		@include bp(desktop){
+			margin-bottom: 20px;
+		}
+	}
+	.container{
+		height: 100%;
+		.row{
+			height: 100%;
+		}
+	}
+	h1{
+		font-weight: bold;
+		margin-top: 15px;
+		@include bp(tablet){
+			font-size: 3.5em;
+		}
+		@include bp(xl-desktop){
+			font-size: 5em;
+		}
+	}
+	.project-content{
+		height: 85%;
+		background:white;
+		box-shadow: 0 0 15px 3px rgba(0,0,0,.5);
+		padding:0;
+		@include bp(desktop){
+			height:485px
+		}
+		@include bp (xl-desktop) {
+			height:585px
+		}
+		.project-gallery{
+			padding:0;
+		}
+	}
+	.desktop-description{
+		display: none;
+		@include bp(desktop){
+			display: block;
+			font-size: 1.1em;
+		}
+	}
+	.mobile-description{
+		margin-top: 15px;
+		@include bp(desktop){
+			display: none;
+		}
+	}
+	.back-button, .back-icon{
+		color: white;
+		text-align: center;
+		margin-top: 10px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//breakpoint sizes for col-4
 
 
 

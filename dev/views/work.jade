@@ -1,0 +1,80 @@
+.container.work
+	.row
+		.control-panel-shade(ur-mobile-search="toggled",ng-click="toggled = !toggled")
+		.col-sm-4
+			.control-panel(ur-get-parent-width,ur-mobile-search="toggled")
+				h1 Work
+				.search-field
+					form(ng-submit="toggled = !toggled")
+						input#search-box(type="text" placeholder="Search" ng-model="search")
+						i.fa.fa-search.search-icon
+				.radio
+					p.divider or
+					h4 Click a Category #[i.fa.fa-folder-open]
+					.btn.btn-category(ng-model="search" btn-radio="'Graphic Design'" ng-click="toggled = !toggled") Graphic Design
+					.btn.btn-category(ng-model="search" btn-radio="'Web Design'" ng-click="toggled = !toggled") Web Design
+					.btn.btn-category(ng-model="search" btn-radio="'Interaction Design'" ng-click="toggled = !toggled") Interaction Design
+					.btn.btn-category(ng-model="search" btn-radio="'Architecture'" ng-click="toggled = !toggled") Architecture
+			button.search-button(ng-click="toggled = !toggled") Search #[i.fa.fa-search]
+
+		.col-sm-8.project-panel
+			h1.search-title(ur-get-parent-width) {{search}} #[span.search-clear(ng-show="search" ng-click="search = ''") #[i.fa.fa-times-circle-o]]
+			h1.mobile-title {{search}} #[span.search-clear(ng-show="search" ng-click="search = ''")#[i.fa.fa-times-circle-o]] #[span(ng-hide="search") Work]
+			.row
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+				.col-md-6
+					a(href)
+						.project(style="background:url('img/boston.jpg'); background-size:cover;")
+							.project-img
+							.project-title
+								h2 Test Title
+								p 2015
+								p Interaction Design
+ng-include(src="'views/project.html'")
+
+
+
+
+
+
+
+

@@ -1,10 +1,10 @@
-var siteDirectives = angular.module('siteDirectives',[]);
+var siteDirectives = angular.module('siteDirectives',[])
 
 siteDirectives.directive('urDarken', function(){
 	return{
 		restrict: 'A',
 		link: function(scope, element, attr){
-			var darkBg = {'background':'rgba(0,0,0,.6)'};
+			var darkBg = {'background':'rgba(0,0,0,.8)'};
 			var defaultBg = {'background':''};
 
 			// check if menu background change was triggered
@@ -37,10 +37,10 @@ siteDirectives.directive('urDarken', function(){
 			});
 		},
 	}
-});
+})
 
 //flip navbar button
-siteDirectives.directive('urFlip', function(){
+.directive('urFlip', function(){
 	return{
 		restrict: 'A',
 		link: function(scope, element){
@@ -55,4 +55,63 @@ siteDirectives.directive('urFlip', function(){
 			});
 		}
 	}
+})
+
+.directive('urGetParentWidth', function(){
+	return{
+		restrict:'A',
+		link: function(scope, element){
+			function getParentWidth(){
+				element.css({
+					'width' : element.parent().width()
+				});
+			};
+
+			getParentWidth();
+
+			angular.element(window).resize(function(){
+				getParentWidth();
+			});
+		}
+	}
+})
+
+.directive('urMobileSearch', function(){
+	return{
+		restrict: 'A',
+		link: function(scope, element, attr){
+			scope.$watch(attr.urMobileSearch, function(isChanged){
+				if(isChanged){
+					element.addClass('control-panel-mobile');
+				} else {
+					element.removeClass('control-panel-mobile');
+				};
+			});
+		}
+	}
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

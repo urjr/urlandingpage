@@ -26,6 +26,11 @@ mySite.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 			url:'/work',
 			templateUrl:'../views/projectlist.html'
 		})
+
+		.state ('work-dev', {
+			url: '/work-dev',
+			templateUrl:'../views/work.html'
+		})
 }]);
 
 // mySite.config(['$routeProvider', function($routeProvider){
