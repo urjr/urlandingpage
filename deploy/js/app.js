@@ -4,7 +4,8 @@ var mySite = angular.module('mySite',[
 	'ui.bootstrap',
 	'sun.scrollable',
 	'indexControllers',
-	'siteDirectives'
+	'siteDirectives',
+	'projectControllers',
 	]);
 
 mySite.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -24,12 +25,13 @@ mySite.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 		.state('work',{
 			url:'/work',
-			templateUrl:'../views/projectlist.html'
+			templateUrl:'../views/projectlist.html',
 		})
 
 		.state ('work-dev', {
 			url: '/work-dev',
-			templateUrl:'../views/work.html'
+			templateUrl:'../views/work.html',
+			controller: 'ProjectController'
 		})
 }]);
 

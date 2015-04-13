@@ -6,14 +6,62 @@
 		"location": "New York, NY",
 		"client": "Somebody",
 		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
+		"pictures": ["boston", "boston","boston"]
 	},
-
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "Graphic Design",
+		"location": "New York, NY",
+		"client": "ulises",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "Graphic Design",
+		"location": "New York, NY",
+		"client": "mike",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "Graphic Design",
+		"location": "New York, NY",
+		"client": "other",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "Graphic Design",
+		"location": "New York, NY",
+		"client": "who",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "Graphic Design",
+		"location": "New York, NY",
+		"client": "what",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
+	{
+		"title": "Test Project",
+		"year": "2015",
+		"category": "architecture",
+		"location": "New York, NY",
+		"client": "when",
+		"keywords":"Design Interaction Digital Media",
+		"pictures": ["boston", "boston","boston"]
+	},
 	{
 		"title": "Test Project",
 		"year": "2015",
@@ -21,116 +69,6 @@
 		"location": "New York, NY",
 		"client": "Somebody",
 		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},
-
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
-		"pictures":[
-			"boston",
-			"boston",
-			"boston",
-			"boston"
-		]
-	},			
+		"pictures": ["boston", "boston","boston"]
+	}
 ]

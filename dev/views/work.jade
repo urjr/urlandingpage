@@ -21,56 +21,15 @@
 			h1.search-title(ur-get-parent-width) {{search}} #[span.search-clear(ng-show="search" ng-click="search = ''") #[i.fa.fa-times-circle-o]]
 			h1.mobile-title {{search}} #[span.search-clear(ng-show="search" ng-click="search = ''")#[i.fa.fa-times-circle-o]] #[span(ng-hide="search") Work]
 			.row
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-				.col-md-6
-					a(href)
-						.project(style="background:url('img/boston.jpg'); background-size:cover;")
-							.project-img
-							.project-title
-								h2 Test Title
-								p 2015
-								p Interaction Design
-//- ng-include(src="'views/project.html'")
-
+				div(ng-repeat="project in projects | filter: search")
+					.col-md-6
+						a(ui-sref=".work")
+							.project(style="background:url('img/{{project.pictures[0]}}.jpg'); background-size:cover;")
+								.project-img
+								.project-title
+									h2 {{project.title}}
+									p {{project.year}}
+									p {{project.category}}
 
 
 
