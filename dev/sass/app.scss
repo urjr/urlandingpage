@@ -614,6 +614,11 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		@include bp(desktop){
 			display: block;
 			font-size: 1.1em;
+			height:300px;
+		}
+		@include bp(xl-desktop){
+			height: 380px;
+			font-size: 1.25em !important;
 		}
 	}
 	.mobile-description{
