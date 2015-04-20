@@ -6,8 +6,10 @@
     </div>
     <div id="main-nav" collapse="!isCollapsed" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref=".work" ng-class="{selected: isActive('/work')}" ng-Click="isCollapsed=!isCollapsed">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
-        <li><a ui-sref=".about" ng-class="{selected: isActive('/about')}" ng-Click="isCollapsed=!isCollapsed">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
+        <li class="mobile-link"><a ui-sref=".work" ng-class="{selected: isActive('/work')}" ng-click="isCollapsed=!isCollapsed">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
+        <li class="mobile-link"><a ui-sref=".about" ng-class="{selected: isActive('/about')}" ng-click="isCollapsed=!isCollapsed">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
+        <li class="desktop-link"><a ui-sref=".work" ng-class="{selected: isActive('/work')}">Work &nbsp;<i class="fa fa-file-image-o"></i></a></li>
+        <li class="desktop-link"><a ui-sref=".about" ng-class="{selected: isActive('/about')}">About &nbsp;<i class="fa fa-file-text-o"></i></a></li>
         <li><a href="img/ulisesreyes-cv.pdf" download="Ulises Reyes CV">CV &nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
         <li><a href="mailto:hi@ulisesreyes.com">Contact &nbsp;<i class="fa fa-envelope"></i></a></li>
       </ul>

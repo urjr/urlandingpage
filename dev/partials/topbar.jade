@@ -7,10 +7,14 @@ nav.navbar.navbar-home.navbar-fixed-top(style="background:rgba({{currentColor}},
 			a.navbar-brand(ui-sref=".home") Ulises Reyes
 		.collapse.navbar-collapse#main-nav(collapse="!isCollapsed")
 			ul.nav.navbar-nav.navbar-right
-				li
-					a(ui-sref=".work", ng-class="{selected: isActive('/work')}", ng-Click="isCollapsed=!isCollapsed") Work &nbsp;#[i.fa.fa-file-image-o]
-				li
-					a(ui-sref=".about", ng-class="{selected: isActive('/about')}", ng-Click="isCollapsed=!isCollapsed") About &nbsp;#[i.fa.fa-file-text-o]
+				li.mobile-link
+					a(ui-sref=".work", ng-class="{selected: isActive('/work')}", ng-click="isCollapsed=!isCollapsed") Work &nbsp;#[i.fa.fa-file-image-o]
+				li.mobile-link
+					a(ui-sref=".about", ng-class="{selected: isActive('/about')}", ng-click="isCollapsed=!isCollapsed") About &nbsp;#[i.fa.fa-file-text-o]
+				li.desktop-link
+					a(ui-sref=".work", ng-class="{selected: isActive('/work')}") Work &nbsp;#[i.fa.fa-file-image-o]
+				li.desktop-link
+					a(ui-sref=".about", ng-class="{selected: isActive('/about')}") About &nbsp;#[i.fa.fa-file-text-o]
 				li
 					a(href="img/ulisesreyes-cv.pdf", download="Ulises Reyes CV") CV &nbsp;#[i.fa.fa-file-pdf-o]
 				li
