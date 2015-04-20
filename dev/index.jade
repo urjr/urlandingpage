@@ -1,5 +1,5 @@
 doctype html
-html(lang="en",ng-app="mySite", ng-controller="ColorController")
+html(lang="en",ng-app="mySite", ng-controller="IndexController")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -8,9 +8,9 @@ html(lang="en",ng-app="mySite", ng-controller="ColorController")
 		meta(property="og:type",content="website")
 		meta(property="og:url",content="http://www.ulisesreyes.com/")
 		meta(property="og:image",content="img/og-image.png")
-		link(rel="icon",type="image/png", href="img/favicon-{{currentColor}}.png")
+		link(rel="icon",type="image/png", href="img/favicon-{{currentFavicon}}.png")
 		link(rel="canonical" href="http://www.ulisesreyes.com/")
-		title(ng-controller="TitleController") {{getTitle()}} Ulises Reyes | Designer
+		title {{getTitle()}} Ulises Reyes | Designer
 		script(src="js/jquery-1.11.2.min.js")
 		script(src="js/jquery.nanoscroller.min.js")
 		script(src="lib/angular/angular.min.js")
@@ -29,7 +29,7 @@ html(lang="en",ng-app="mySite", ng-controller="ColorController")
 		link(rel="stylesheet", href="css/app.css")
 		link(rel="stylesheet", href="css/nanoscroller.css")
 
-	body(style="background:#{{currentColor}}")
+	body(style="background:rgb({{currentColor}})")
 		ng-include(src="'partials/topbar.html'")
 		div(ui-view)
 		script.

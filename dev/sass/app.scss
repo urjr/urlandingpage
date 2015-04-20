@@ -87,13 +87,13 @@ body{
 }
 
 .view{
-	margin-top:50px;
+	margin-top:51px;
 }
 
 //home navbar
 .navbar-home{
 	// position:relative;
-	z-index:1000;
+	z-index:500;
 	font-family: $font-stack-default;
 	text-shadow: $text-shadow-effect;
 	margin-bottom:0;
