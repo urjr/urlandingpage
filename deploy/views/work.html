@@ -25,17 +25,14 @@
       <h1 ur-get-parent-width="ur-get-parent-width" class="search-title">{{search}} <span ng-show="search" ng-click="search = ''" class="search-clear"><i class="fa fa-times-circle-o"></i></span></h1>
       <h1 class="mobile-title">{{search}} <span ng-show="search" ng-click="search = ''" class="search-clear"><i class="fa fa-times-circle-o"></i></span> <span ng-hide="search">Work</span></h1>
       <div class="row">
-        <div ng-repeat="project in projects | filter: search">
-          <div class="col-md-6"><a ui-sref="work.project({projectId:projects.indexOf(project)})">
-              <div style="background:url('img/{{project.pictures[0]}}.jpg'); background-size:cover;" class="project">
-                <div class="project-img"></div>
-                <div class="project-title">
-                  <h2>{{project.title}}</h2>
-                  <p>{{project.year}}</p>
-                  <p>{{project.category}}</p>
-                </div>
-              </div></a></div>
-        </div>
+        <div ng-repeat="project in projects | filter: search" ng-animate="'animate'" class="col-md-6 project"><a ui-sref="work.project({projectId:projects.indexOf(project)})">
+            <div style="background:url('img/{{project.pictures[0]}}.jpg'); background-size:cover;" class="project-listing">
+              <div class="project-title">
+                <h2>{{project.title}}</h2>
+                <p>{{project.year}}</p>
+                <p>{{project.category}}</p>
+              </div>
+            </div></a></div>
       </div>
     </div>
   </div>

@@ -69,7 +69,7 @@
 
 $font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-stack-cursive: 'Pacifico', cursive;
-$text-shadow-effect: 0 1px rgba(0,0,0,.5);
+$text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
 
 
 @include keyframes(floating-search){
@@ -521,7 +521,7 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 			}
 		}
 	}
-	.project{
+	.project-listing{
 		height: 380px;
 		margin-bottom: 30px;
 		position: relative;
@@ -697,6 +697,21 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 			display: none;
 		}
 	}
+}
+.project{
+	@include transition(.25s)
+}
+
+.project.ng-enter.ng-enter-active,
+.project.ng-leave{
+	opacity: 1;
+	height: 400px;
+}
+
+.project.ng-leave.ng-leave-active,
+.project.ng-enter{
+	opacity: 0;
+	height: 0;
 }
 
 
