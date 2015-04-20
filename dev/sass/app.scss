@@ -593,6 +593,23 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		height:100%;
 		overflow-y: auto;
 	}
+
+	.carousel-control{
+		background: transparent;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.carousel-indicators li {
+		border-radius: 0;
+		border: none;
+		background: white;
+		opacity: .75;
+		&.active{
+			opacity: 1;
+		}
+	}
 	.back-button-desktop{
 		position: absolute;
 		top:15px;
@@ -637,9 +654,6 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		margin-top: 15px;
 		@include bp(tablet){
 			font-size: 3.5em;
-		}
-		@include bp(xl-desktop){
-			font-size: 5em;
 		}
 	}
 	.project-content{
