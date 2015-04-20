@@ -5,3 +5,15 @@ projectControllers.controller("ProjectController", ['$scope', '$http', function(
 		$scope.projects = data;
 	});
 }]);
+
+projectControllers.controller("FeatureController", ['$scope', '$http', '$stateParams', '$animate','$timeout', function($scope, $http, $stateParams, $animate, $timeout){
+	$http.get('js/data.json').success(function(data){
+		$scope.feature = data[$stateParams.projectId];
+	});
+	$scope.whoIs = $stateParams.projectId;
+
+	//hacky fix for carousel
+  $timeout(function() {
+    $animate.enabled(false, angular.element(".carousel"))
+  })
+}]);

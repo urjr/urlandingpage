@@ -1,25 +1,22 @@
 .project-feature
+	.feature-bg
 	.container.view
 		.row(style="position:relative;")
-			.col-sm-12.project-content.nano-black(scrollable="{alwaysVisible: true}")
-				.col-md-6.project-data
-					h1 Title
+			.col-sm-12.project-content
+				.col-md-5.project-data
+					h1(ng-click="console.log('clicked!')") {{feature.title}}
 					.row.metadata
 						.col-xs-6
-							p #[b Year:] 2015
-							p #[b Category:] Graphic Design
+							p #[b Year:] {{feature.year}}
+							p #[b Category:] {{feature.category}}
 						.col-xs-6
-							p #[b Location:] New York, NY
-							p #[b Client:] Myself
-					p.desktop-description.nano-black(scrollable="{alwaysVisible: false}") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero eros, tempor non tincidunt eget, mattis in tortor. Morbi eu velit sed turpis molestie lobortis ac vel metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin quis tellus ex. In suscipit nec neque vel fringilla. Aliquam sit amet ultrices enim. Sed eros metus, tincidunt id nisi a, semper porta ex. Pellentesque a accumsan risus, vel sagittis elit. Sed et pharetra eros. Curabitur sodales at lectus a aliquet. Cras varius nisi tellus, at porttitor ex congue in. Etiam non leo consequat, pharetra eros sit amet, suscipit purus. Cras molestie imperdiet ultrices.
-				.col-md-6.project-gallery
-					carousel(interval="500")
-						slide
-							a(href="../img/boston.jpg" target="_blank") #[img(src="img/boston.jpg")]
-						slide
-							img(src="img/boston.jpg")
-						slide
-							img(src="img/boston.jpg")
+							p #[b Location:] {{feature.location}}
+							p #[b Client:] {{feature.client}}
+					p.desktop-description.nano-black(scrollable="{alwaysVisible: false}") {{feature.description}}
+				.col-md-7.project-gallery
+					carousel(interval="3000")
+						slide(ng-repeat="pic in feature.pictures track by $index" active="pic.active")
+							a(href="../img/{{pic}}.jpg" target="_blank") #[img(src="img/{{pic}}.jpg")]
 				.col-md-6.mobile-description
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero eros, tempor non tincidunt eget, mattis in tortor. Morbi eu velit sed turpis molestie lobortis ac vel metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin quis tellus ex. In suscipit nec neque vel fringilla. Aliquam sit amet ultrices enim. Sed eros metus, tincidunt id nisi a, semper porta ex. Pellentesque a accumsan risus, vel sagittis elit. Sed et pharetra eros. Curabitur sodales at lectus a aliquet. Cras varius nisi tellus, at porttitor ex congue in. Etiam non leo consequat, pharetra eros sit amet, suscipit purus. Cras molestie imperdiet ultrices.
-			h1.back-button Back
+					p {{feature.description}}
+			a(ui-sref="work" ur-screen-lock) #[h1.back-button Back]

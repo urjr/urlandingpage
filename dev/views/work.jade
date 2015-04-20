@@ -23,13 +23,16 @@
 			.row
 				div(ng-repeat="project in projects | filter: search")
 					.col-md-6
-						a(ui-sref=".work")
+						a(ui-sref="work.project({projectId:projects.indexOf(project)})")
 							.project(style="background:url('img/{{project.pictures[0]}}.jpg'); background-size:cover;")
 								.project-img
 								.project-title
 									h2 {{project.title}}
 									p {{project.year}}
 									p {{project.category}}
+//- ng-include(src="'views/project.html'")
+div(ui-view="")
+
 
 
 

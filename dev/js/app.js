@@ -9,6 +9,7 @@ var mySite = angular.module('mySite',[
 	]);
 
 mySite.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	
 	$urlRouterProvider.otherwise('/home');
 
 	$stateProvider
@@ -23,15 +24,21 @@ mySite.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 			templateUrl:'../views/about.html'
 		})
 
-		.state('work',{
-			url:'/work',
-			templateUrl:'../views/projectlist.html',
-		})
+		// .state('work',{
+		// 	url:'/work',
+		// 	templateUrl:'../views/projectlist.html',
+		// })
 
-		.state ('work-dev', {
-			url: '/work-dev',
+		.state ('work', {
+			url: '/work',
 			templateUrl:'../views/work.html',
 			controller: 'ProjectController'
+		})
+
+		.state ('work.project', {
+			url: '/:projectId',
+			templateUrl:'../views/project.html',
+			controller: 'FeatureController'
 		})
 }]);
 

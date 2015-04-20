@@ -1,44 +1,5 @@
 var siteDirectives = angular.module('siteDirectives',[])
 
-siteDirectives.directive('urDarken', function(){
-	return{
-		restrict: 'A',
-		link: function(scope, element, attr){
-			var darkBg = {'background':'rgba(0,0,0,.8)'};
-			var defaultBg = {'background':''};
-
-			// check if menu background change was triggered
-			var changeTriggered = false;
-
-			// checks for css tablet breakpoint, removes newly added dark background when larger than 768px
-			function checkWindowWidth(){
-				$(window).resize(function(){
-					if(changeTriggered){
-						if($(window).width() >= 768){
-							element.css(defaultBg);
-						};
-						if($(window).width() < 768){
-							element.css(darkBg);
-						};
-					}
-				});
-			};
-
-			//darkens navbar background when event is triggered
-			scope.$watch(attr.urDarken, function(shouldDarken){
-				if(shouldDarken){
-					element.css(darkBg);
-					changeTriggered = true;
-					checkWindowWidth();
-				} else {
-					element.css(defaultBg);
-					changeTriggered = false;
-				}
-			});
-		},
-	}
-})
-
 //flip navbar button
 .directive('urFlip', function(){
 	return{
@@ -87,6 +48,60 @@ siteDirectives.directive('urDarken', function(){
 					element.removeClass('control-panel-mobile');
 				};
 			});
+		}
+	}
+})
+
+.directive('urHideFeature', function(){
+	return{
+		restrict: 'A',
+		link: function(scope, element, attr){
+			element.on('click', function(){
+				element.parent().parent().parent().fadeOut('slow');
+			});
+		}
+	}
+})
+
+.directive('urScreenLock', function(){
+	return{
+		restrict: 'A',
+		link: function(scope, element, attr){
+			function lockScreen(){
+				$('html').css({
+					"height": "100%",
+					"overflow": "hidden"
+				});
+			};
+
+			function unlockScreen(){
+				$('html').css({
+					"height": "",
+					"overflow": ""
+				});
+			};
+
+			// var exists = true
+			lockScreen();
+			element.css({
+				"top": window.scrollTop
+			});
+
+			element.click(function(){
+				unlockScreen();
+				// exists = false
+			});
+
+			// $(window).resize(function(){
+			// 	if (exists){
+			// 		if($(window).width() >= 992){
+			// 			lockScreen();
+			// 		};
+			// 		if($(window).width() < 991){
+			// 			unlockScreen();
+			// 		};
+			// 	};
+			// });
 		}
 	}
 });

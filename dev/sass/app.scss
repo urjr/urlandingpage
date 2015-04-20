@@ -411,7 +411,7 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 	}
 
 	.control-panel,.control-panel-shade{
-		margin-top:-200%;
+		margin-top:-300%;
 		@include transition(.25s);
 		@include bp(tablet){
 			margin-top: auto;
@@ -567,22 +567,29 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 	text-shadow: $text-shadow-effect;
 	width:100%;
 	height:100%;
-	background: rgba(0,0,0,.6);
+	overflow-y:auto;
 	position:fixed;
 	top:0;
 	left:0;
 	z-index:900;
+	@include bp(desktop){
+		height:100%;
+		overflow-y: auto;
+	}
+	.feature-bg{
+		background: rgba(0,0,0,.5);
+		height:100%;
+		width:100%;
+		position:fixed;
+	}
 	.metadata{
 		border-bottom: 1px solid #ccc;
 		@include bp(desktop){
 			margin-bottom: 20px;
 		}
 	}
-	.container{
-		height: 100%;
-		.row{
-			height: 100%;
-		}
+	a{
+		text-decoration: none;
 	}
 	h1{
 		font-weight: bold;
@@ -595,15 +602,15 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		}
 	}
 	.project-content{
-		height: 85%;
 		background:white;
 		box-shadow: 0 0 15px 3px rgba(0,0,0,.5);
-		padding:0;
+		padding:15px 0;
 		@include bp(desktop){
-			height:485px
+			height:566px;
+			padding: 0;
 		}
 		@include bp (xl-desktop) {
-			height:585px
+			height:682px
 		}
 		.project-gallery{
 			padding:0;
@@ -631,9 +638,6 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		color: white;
 		text-align: center;
 		margin-top: 10px;
-		&:hover{
-			cursor: pointer;
-		}
 	}
 }
 

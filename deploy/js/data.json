@@ -1,74 +1,62 @@
 [
 	{
-		"title": "Test Project",
-		"year": "2015",
+		"title": "Test One",
+		"year": 2015,
 		"category": "Graphic Design",
 		"location": "New York, NY",
 		"client": "Somebody",
 		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Project",
 		"pictures": ["boston", "boston","boston"]
 	},
 	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
+		"title": "Test Two",
+		"year": 2015,
+		"category": "Architecture",
 		"location": "New York, NY",
 		"client": "ulises",
 		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Other Project",
 		"pictures": ["boston", "boston","boston"]
 	},
 	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
+		"title": "Test Three",
+		"year": 2013,
+		"category": "Web Design",
 		"location": "New York, NY",
-		"client": "mike",
+		"client": "ulises",
 		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Other Project",
 		"pictures": ["boston", "boston","boston"]
 	},
 	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
+		"title": "Test Five",
+		"year": 3000,
+		"category": "Web Design",
 		"location": "New York, NY",
-		"client": "other",
+		"client": "ulises",
 		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Other Project",
 		"pictures": ["boston", "boston","boston"]
 	},
 	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
+		"title": "Test Three",
+		"year": 2013,
+		"category": "Web Design",
 		"location": "New York, NY",
-		"client": "who",
+		"client": "ulises",
 		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Other Project",
 		"pictures": ["boston", "boston","boston"]
 	},
 	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
+		"title": "Test Five",
+		"year": 3000,
+		"category": "Web Design",
 		"location": "New York, NY",
-		"client": "what",
+		"client": "ulises",
 		"keywords":"Design Interaction Digital Media",
-		"pictures": ["boston", "boston","boston"]
-	},
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "architecture",
-		"location": "New York, NY",
-		"client": "when",
-		"keywords":"Design Interaction Digital Media",
-		"pictures": ["boston", "boston","boston"]
-	},
-	{
-		"title": "Test Project",
-		"year": "2015",
-		"category": "Graphic Design",
-		"location": "New York, NY",
-		"client": "Somebody",
-		"keywords":"Design Interaction Digital Media",
+		"description":"This is My Other Project",
 		"pictures": ["boston", "boston","boston"]
 	}
 ]
