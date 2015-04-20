@@ -69,7 +69,7 @@
 
 $font-stack-default: "Sweden Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-stack-cursive: 'Pacifico', cursive;
-$text-shadow-effect: 0 1px 1px rgba(0,0,0,.5);
+$text-shadow-effect: 0 1px rgba(0,0,0,.5);
 
 
 @include keyframes(floating-search){
@@ -523,7 +523,6 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		&:hover{
 			@include scale(1.02);
 			box-shadow: 0 0 15px 2px rgba(0,0,0,.5);
-			z-index:600;
 		}
 		@include bp(desktop){
 			@include transition(.25s);
@@ -586,11 +585,35 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		height:100%;
 		overflow-y: auto;
 	}
+	.back-button-desktop{
+		position: absolute;
+		top:15px;
+		right:15px;
+		color: white;
+		display: none;
+		@include bp(desktop){
+			display:block;
+		}
+	}
+	.back-button-mobile{
+		position:absolute;
+		right:15px;
+		top:15px;
+		color:gray;
+		z-index: 100;
+		@include bp(desktop){
+			display: none;
+		}
+	}
 	.feature-bg{
 		background: rgba(0,0,0,.5);
-		height:100%;
+		height:300%;
+		top: -100%;
 		width:100%;
 		position:fixed;
+		&:hover{
+			cursor: default;
+		}
 	}
 	.metadata{
 		border-bottom: 1px solid #ccc;
@@ -614,10 +637,17 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 	.project-content{
 		background:white;
 		box-shadow: 0 0 15px 3px rgba(0,0,0,.5);
-		padding:15px 0;
+		padding:5px 0;
+		margin: 15px;
+		@include bp(tablet){
+			margin: 0;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
 		@include bp(desktop){
 			height:566px;
 			padding: 0;
+			margin-top: 50px;
 		}
 		@include bp (xl-desktop) {
 			height:682px
@@ -643,11 +673,6 @@ $work-box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 		@include bp(desktop){
 			display: none;
 		}
-	}
-	.back-button, .back-icon{
-		color: white;
-		text-align: center;
-		margin-top: 10px;
 	}
 }
 

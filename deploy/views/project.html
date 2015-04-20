@@ -1,11 +1,11 @@
 
-<div class="project-feature">
-  <div class="feature-bg"></div>
-  <div class="container view">
-    <div style="position:relative;" class="row">
-      <div class="col-sm-12 project-content">
+<div class="project-feature"><a ui-sref="work" ur-screen-lock="ur-screen-lock">
+    <div class="feature-bg"></div></a><a ui-sref="work" ur-screen-lock="ur-screen-lock" class="back-button-desktop"><i class="fa fa-2x fa-times"></i></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 project-content"><a ui-sref="work" ur-screen-lock="ur-screen-lock" class="back-button-mobile">Back <i class="fa fa-times"></i></a>
         <div class="col-md-5 project-data">
-          <h1 ng-click="console.log('clicked!')">{{feature.title}}</h1>
+          <h1>{{feature.title}}</h1>
           <div class="row metadata">
             <div class="col-xs-6">
               <p><b>Year:</b> {{feature.year}}</p>
@@ -26,8 +26,7 @@
         <div class="col-md-6 mobile-description">
           <p>{{feature.description}}</p>
         </div>
-      </div><a ui-sref="work" ur-screen-lock="ur-screen-lock">
-        <h1 class="back-button">Back</h1></a>
+      </div>
     </div>
   </div>
 </div>

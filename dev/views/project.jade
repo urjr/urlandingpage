@@ -1,10 +1,13 @@
 .project-feature
-	.feature-bg
-	.container.view
-		.row(style="position:relative;")
+	a(ui-sref="work" ur-screen-lock)
+		.feature-bg
+	a.back-button-desktop(ui-sref="work" ur-screen-lock) #[i.fa.fa-2x.fa-times]
+	.container
+		.row
 			.col-sm-12.project-content
+				a.back-button-mobile(ui-sref="work" ur-screen-lock) Back #[i.fa.fa-times]
 				.col-md-5.project-data
-					h1(ng-click="console.log('clicked!')") {{feature.title}}
+					h1 {{feature.title}}
 					.row.metadata
 						.col-xs-6
 							p #[b Year:] {{feature.year}}
@@ -13,10 +16,11 @@
 							p #[b Location:] {{feature.location}}
 							p #[b Client:] {{feature.client}}
 					p.desktop-description.nano-black(scrollable="{alwaysVisible: false}") {{feature.description}}
+
 				.col-md-7.project-gallery
 					carousel(interval="3000")
 						slide(ng-repeat="pic in feature.pictures track by $index" active="pic.active")
 							a(href="../img/{{pic}}.jpg" target="_blank") #[img(src="img/{{pic}}.jpg")]
 				.col-md-6.mobile-description
 					p {{feature.description}}
-			a(ui-sref="work" ur-screen-lock) #[h1.back-button Back]
+			//- a(ui-sref="work" ur-screen-lock) #[h1.back-button Back]
